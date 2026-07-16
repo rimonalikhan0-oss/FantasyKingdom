@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.FantasyKingdom" parent="android:Theme.Material.NoActionBar" />
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <!-- Fantasy Kingdom brand palette: royal purple + gold accents -->
+    <color name="royal_purple">#6A3EA1</color>
+    <color name="royal_purple_dark">#4A2574</color>
+    <color name="magic_gold">#F4B740</color>
+    <color name="ember_pink">#F2678A</color>
+    <color name="sky_teal">#2FC1B9</color>
+    <color name="deep_night">#161022</color>
+    <color name="cloud_white">#FFFBFE</color>
+    <color name="soft_gray">#EDE7F6</color>
+</resources>

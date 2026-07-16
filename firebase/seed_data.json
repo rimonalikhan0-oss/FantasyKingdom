@@ -1,0 +1,72 @@
+{
+  "_readme": "Sample documents to import into Firestore so the app has content to display. Import each top-level key as its own collection (e.g. via the Firebase console 'Import JSON' in a script, or the Firebase CLI with a small import script).",
+
+  "rides": [
+    {
+      "id": "dragon_peak",
+      "name": "Dragon's Peak",
+      "description": "A steel-coaster launch through fire-breathing dragon statues and a 90-degree drop.",
+      "imageUrl": "https://images.unsplash.com/photo-1560343090-f0409e92791a",
+      "category": "THRILL",
+      "heightRequirementCm": 132,
+      "waitTimeMinutes": 45,
+      "thrillRating": 5,
+      "isOpen": true,
+      "zone": "Dragon's Ridge"
+    },
+    {
+      "id": "enchanted_carousel",
+      "name": "Enchanted Carousel",
+      "description": "A classic hand-carved carousel with glowing unicorns and gentle music.",
+      "imageUrl": "https://images.unsplash.com/photo-1533230050497-9e63b6e04b76",
+      "category": "FAMILY",
+      "heightRequirementCm": 0,
+      "waitTimeMinutes": 10,
+      "thrillRating": 1,
+      "isOpen": true,
+      "zone": "Fairytale Square"
+    }
+  ],
+
+  "restaurants": [
+    {
+      "id": "golden_griffin_tavern",
+      "name": "Golden Griffin Tavern",
+      "cuisine": "American Comfort",
+      "imageUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "rating": 4.6,
+      "priceLevel": 2,
+      "zone": "Kingdom Square",
+      "menuHighlights": ["Turkey Legs", "Griffin Fries", "Berry Tart"]
+    }
+  ],
+
+  "events_offers": [
+    {
+      "id": "summer_night_parade",
+      "title": "Summer Night Parade",
+      "description": "A dazzling light-up parade through Kingdom Square every evening.",
+      "imageUrl": "https://images.unsplash.com/photo-1533669955142-6a73332af4db",
+      "kind": "EVENT",
+      "discountPercent": 0
+    },
+    {
+      "id": "family_four_pack",
+      "title": "Family 4-Pack Discount",
+      "description": "Save on a 4-guest one-day pass bundle, this month only.",
+      "imageUrl": "https://images.unsplash.com/photo-1541516160071-4bb0c5af65ba",
+      "kind": "OFFER",
+      "discountPercent": 20
+    }
+  ],
+
+  "gallery": [
+    { "id": "img1", "imageUrl": "https://images.unsplash.com/photo-1560343090-f0409e92791a", "caption": "Dragon's Peak at sunset", "category": "Rides" },
+    { "id": "img2", "imageUrl": "https://images.unsplash.com/photo-1533230050497-9e63b6e04b76", "caption": "Enchanted Carousel", "category": "Rides" }
+  ],
+
+  "map_zones": [
+    { "id": "zone1", "name": "Fairytale Square", "description": "The heart of the kingdom, home to the castle and carousel.", "xPercent": 0.5, "yPercent": 0.5, "icon": "castle" },
+    { "id": "zone2", "name": "Dragon's Ridge", "description": "Thrill rides and dragon-themed attractions.", "xPercent": 0.75, "yPercent": 0.3, "icon": "mountain" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "_comment": "TEMPLATE ONLY. Download your real google-services.json from the Firebase console (Project settings > Your apps > Android app) and place it at app/google-services.json before building. Package name must be com.fantasykingdom.app",
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "fantasy-kingdom-app",
+    "storage_bucket": "fantasy-kingdom-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "android_client_info": { "package_name": "com.fantasykingdom.app" }
+      },
+      "oauth_client": [],
+      "api_key": [ { "current_key": "REPLACE_ME" } ],
+      "services": {
+        "appinvite_service": {}
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

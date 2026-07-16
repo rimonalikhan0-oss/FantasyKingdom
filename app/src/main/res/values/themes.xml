@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme (Compose reads Material3 theme from Theme.kt; this XML theme
+         is only used for the system splash-screen window before Compose takes over). -->
+    <style name="Theme.FantasyKingdom" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.FantasyKingdom.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/royal_purple</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.FantasyKingdom</item>
+    </style>
+</resources>
