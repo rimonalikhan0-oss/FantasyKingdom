@@ -1,0 +1,57 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # The repo intentionally does NOT commit the binary gradle-wrapper.jar.
+      # gradle/actions/setup-gradle provisions a real Gradle install and we
+      # use it once to (re)generate gradlew, gradlew.bat and the wrapper jar
+      # to match gradle/wrapper/gradle-wrapper.properties, then use ./gradlew
+      # for the actual build like any normal Gradle-wrapper project.
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Regenerate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.7
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Restore google-services.json
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then
+            echo "$GOOGLE_SERVICES_JSON" > app/google-services.json
+          else
+            echo "No GOOGLE_SERVICES_JSON secret set — copying template so the build doesn't fail on a missing file."
+            echo "Add a real one via repo Settings > Secrets > Actions for a working Firebase build."
+            cp app/google-services.json.template app/google-services.json
+          fi
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fantasy-kingdom-debug-apk
+          path: app/build/outputs/apk/debug/*.apk

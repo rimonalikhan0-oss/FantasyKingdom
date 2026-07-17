@@ -48,6 +48,23 @@ app/src/main/java/com/fantasykingdom/app/
     └── <feature>/                # One folder per feature, each with Screen + ViewModel
 ```
 
+## Gradle Wrapper
+
+This project includes `gradlew` / `gradlew.bat` and `gradle/wrapper/gradle-wrapper.properties`
+(pinned to Gradle 8.7), but **not** the binary `gradle-wrapper.jar` — it isn't committed here.
+You have three easy ways to get it:
+
+1. **Android Studio (simplest):** just open the project. Studio detects the wrapper
+   config and offers to regenerate the jar using its bundled Gradle — accept the prompt
+   (or go to *File → Sync Project with Gradle Files* if it doesn't prompt automatically).
+2. **Local one-liner:** if you have any Gradle installed (`brew install gradle`,
+   `sdk install gradle`, `apt install gradle`, etc.), run `./generate-wrapper.sh` from the
+   project root — it regenerates `gradlew`, `gradlew.bat`, and the jar to match Gradle 8.7.
+3. **CI (GitHub Actions):** `.github/workflows/android-ci.yml` is already set up to
+   provision Gradle and regenerate the wrapper automatically before every build, so
+   pushing to GitHub builds correctly with no extra setup. Add a `GOOGLE_SERVICES_JSON`
+   repo secret (the full file contents) for it to build against real Firebase config.
+
 ## Getting started
 
 ### 1. Open the project
